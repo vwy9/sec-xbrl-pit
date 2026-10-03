@@ -1,0 +1,11 @@
+# 原始与中间数据：由 CLI 重建，不入版本库
+data/raw/
+data/parquet/
+data/out/
+
+# figures/ 是交付物，刻意不忽略
+
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store

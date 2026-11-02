@@ -2,18 +2,25 @@
 
 *[中文版](README.zh.md)*
 
-Two questions, answered on entirely public SEC data:
+**Point-in-time SEC fundamentals** — 69 quarters of the SEC Financial Statement
+Data Sets, rebuilt into one observation table, a restatement census, and a
+runnable demonstration that **truncation tests cannot see restatement**.
 
-1. **How often do US financial statement figures get rewritten by later filings?**
-   By how much, after how long, and how many arrive through a formal amendment.
-2. **Can a program that passes a truncation test still be using data it could
-   not have had at the time?**
+Two questions, answered on entirely public data:
 
-The second question is why this repository exists. A truncation test checks
-that a function `f` is causal with respect to its input tensor `D` — that
-`y_t = f(D_0:t)` for all `t`. It says nothing about whether `D` itself is
-`F_t`-measurable. **A revision rewrites the past, not the future, so a program
-fed restated fundamentals passes truncation unchanged.**
+1. **How often are reported figures rewritten, by how much, and after how
+   long?** → **9.28%** of facts reported twice or more change value; **92.2%**
+   of those revisions arrive with no formal amendment, a median of **364 days**
+   after first publication.
+2. **Can a program pass a truncation test while using data it could not have
+   had?** → Yes: aligning on the reporting period instead of the filing date
+   does it (Λ_rank 0.083, against 0 for the filing-date-aligned version).
+
+The second question is why this repository exists. A truncation test checks that
+a function `f` is causal in its input tensor `D` — that `y_t = f(D_0:t)` for all
+`t` — and says nothing about whether `D` itself is `F_t`-measurable. **A
+revision rewrites the past, not the future, so a program fed restated
+fundamentals passes truncation unchanged.**
 
 ## Results
 
